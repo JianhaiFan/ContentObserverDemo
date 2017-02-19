@@ -1,0 +1,2 @@
+# ContentObserverDemo
+内容提供者，内容观察者结合GreenDao的演示Demo
