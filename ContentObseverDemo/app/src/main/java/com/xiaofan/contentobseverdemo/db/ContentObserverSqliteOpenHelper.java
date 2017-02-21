@@ -2,11 +2,7 @@ package com.xiaofan.contentobseverdemo.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-
-import com.xiaofan.contentobseverdemo.greendao.DaoMaster;
-import com.xiaofan.contentobseverdemo.greendao.MigrationHelper;
-import com.xiaofan.contentobseverdemo.greendao.UserBeanDao;
-import com.xiaofan.contentobseverdemo.util.LogUtil;
+import android.database.sqlite.SQLiteOpenHelper;
 
 
 /**
@@ -17,23 +13,20 @@ import com.xiaofan.contentobseverdemo.util.LogUtil;
  * @changed by:
  */
 
-public class ContentObserverSqliteOpenHelper extends DaoMaster.OpenHelper  {
+public class ContentObserverSqliteOpenHelper extends SQLiteOpenHelper {
 
-    public ContentObserverSqliteOpenHelper(Context context, String name) {
-        super(context, name);
-    }
 
-    public ContentObserverSqliteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory) {
-        super(context, name, factory);
+    public ContentObserverSqliteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion > oldVersion) {
-            LogUtil.e("数据库升级了...");
-            //数据迁移模块
-            MigrationHelper.migrate(db,UserBeanDao.class);
-        }
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
 }

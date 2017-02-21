@@ -13,7 +13,14 @@ import com.xiaofan.contentobseverdemo.observer.AirplaneContentObserver;
 import com.xiaofan.contentobseverdemo.observer.SMSContentObserver;
 import com.xiaofan.contentobseverdemo.util.LogUtil;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * @author: 范建海
+ * @createTime: 2017/2/20 10:23
+ * @className:  ContentObserverMainActivity
+ * @description: 内容观察者演示界面
+ * @changed by:
+ */
+public class ContentObserverMainActivity extends AppCompatActivity {
 
     private TextView tvAirplane;
     private EditText etSmsoutbox;

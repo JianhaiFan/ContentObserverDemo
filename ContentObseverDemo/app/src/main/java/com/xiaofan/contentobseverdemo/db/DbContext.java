@@ -1,4 +1,8 @@
-package com.xiaofan.contentobseverdemo.greendao;
+package com.xiaofan.contentobseverdemo.db;
+
+/**
+ * Created by fanjianhai on 2017/2/20.
+ */
 
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -18,9 +22,9 @@ import java.io.IOException;
  * @description: GreenDao数据库帮助类
  * @changed by:
  */
-public class GreenDaoContext extends ContextWrapper {
+public class DbContext extends ContextWrapper {
 
-    public GreenDaoContext(Context ctx) {
+    public DbContext(Context ctx) {
         super(ctx);
     }
 

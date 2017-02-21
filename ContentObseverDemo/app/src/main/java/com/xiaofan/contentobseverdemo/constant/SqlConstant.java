@@ -1,5 +1,7 @@
 package com.xiaofan.contentobseverdemo.constant;
 
+import android.net.Uri;
+
 /**
  * @author: 范建海
  * @createTime: 2016/11/18 15:35
@@ -16,6 +18,15 @@ public class SqlConstant {
     public static final String SQLITE_FILE_NAME = "green_dao";
     // 数据库文件名（默认）
     public static final String SQLITE_FILE_NAME_DEFAULT = SQLITE_FILE_NAME + DB_EXTENSION_NAME;
+
+    public static final Uri CUSTOM_CONTENT_URI = Uri.parse("content://com.xiaofan.contentobseverdemo.provider.customprovider");
+    // 自定义内容提供者的标识符
+    public static final String CUSTOM_AUTHORITY = "com.xiaofan.contentobseverdemo.provider.customprovider";
+
+
+
+
+
 
 
 
