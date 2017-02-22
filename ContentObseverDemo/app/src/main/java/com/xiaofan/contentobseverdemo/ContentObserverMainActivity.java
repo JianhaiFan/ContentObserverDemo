@@ -1,11 +1,11 @@
 package com.xiaofan.contentobseverdemo;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,7 +20,7 @@ import com.xiaofan.contentobseverdemo.util.LogUtil;
  * @description: 内容观察者演示界面
  * @changed by:
  */
-public class ContentObserverMainActivity extends AppCompatActivity {
+public class ContentObserverMainActivity extends Activity {
 
     private TextView tvAirplane;
     private EditText etSmsoutbox;

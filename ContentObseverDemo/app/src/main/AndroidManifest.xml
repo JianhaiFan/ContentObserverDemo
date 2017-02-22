@@ -16,16 +16,16 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 
-
     <application
         android:name="com.xiaofan.contentobseverdemo.application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Light.NoTitleBar"
+        >
         <!-- ProviderMainActivity演示类 -->
-        <activity android:name=".ContactsActivity">
+        <activity android:name=".ProviderMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,11 +33,28 @@
             </intent-filter>
         </activity>
 
+        <!-- 消息列表界面 -->
+        <activity android:name=".MessageListActivity" android:screenOrientation="portrait" />
+
         <!-- 自定义内容提供者CustomProvider类 -->
         <provider
             android:name="com.xiaofan.contentobseverdemo.provider.CustomProvider"
             android:authorities="com.xiaofan.contentobseverdemo.provider.customprovider"
             android:exported="true" />
+
+        <!-- 友盟相关 -->
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="0a0c6c614e834f6ec355b0390ed42d52" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58ac1adc310c931fc7000d82" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
+
+        <!-- 自定义处理消息的服务 -->
+        <service android:name="com.xiaofan.contentobseverdemo.service.PushIntentService" />
 
 
     </application>

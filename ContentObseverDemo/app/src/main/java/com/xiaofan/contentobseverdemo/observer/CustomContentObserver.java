@@ -41,6 +41,5 @@ public class CustomContentObserver extends ContentObserver{
 
     private void onChange() {
 
-
     }
 }
