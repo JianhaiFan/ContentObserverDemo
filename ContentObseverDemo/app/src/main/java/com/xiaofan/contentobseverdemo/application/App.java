@@ -90,28 +90,4 @@ public class App extends Application {
         return instance;
     }
 
-    /**
-     * 获取DAO session
-     * @param partyId 当前用户的唯一标识
-     * @return
-     */
-//    public static DaoSession getDaoSession(String partyId) {
-//        if(!TextUtils.isEmpty(partyId)) {
-//            // 数据库名称
-//            String dbName = SqlConstant.SQLITE_FILE_NAME + "_" + partyId + SqlConstant.DB_EXTENSION_NAME;
-//            // 实例为空，或者数据库文件不存在，需要重新创建数据库
-//            if (daoMaster == null || !ExternalStorageUtil.exists(CommonConstant.DB_PATH + dbName) ) {
-//                helper = new ContentObserverSqliteOpenHelper(new GreenDaoContext(instance), dbName);
-//                if (helper != null) {
-//                    daoMaster = new DaoMaster(helper.getWritableDatabase());
-//                }
-//            }
-//
-//            if(daoMaster != null) {
-//                daoSession = daoMaster.newSession();
-//            }
-//        }
-//        return daoSession;
-//    }
-
 }

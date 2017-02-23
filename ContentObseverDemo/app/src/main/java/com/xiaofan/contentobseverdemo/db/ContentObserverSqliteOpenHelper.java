@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.xiaofan.contentobseverdemo.constant.SqlConstant;
+
 
 /**
  * @author: 范建海
@@ -22,7 +24,7 @@ public class ContentObserverSqliteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+        sqLiteDatabase.execSQL(SqlConstant.SQL_TABLE_MESSAGE_CREATE);
     }
 
     @Override

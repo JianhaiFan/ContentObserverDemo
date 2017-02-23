@@ -38,8 +38,8 @@
 
         <!-- 自定义内容提供者CustomProvider类 -->
         <provider
-            android:name="com.xiaofan.contentobseverdemo.provider.CustomProvider"
-            android:authorities="com.xiaofan.contentobseverdemo.provider.customprovider"
+            android:name="com.xiaofan.contentobseverdemo.provider.MessageProvider"
+            android:authorities="com.xiaofan.contentobseverdemo.provider.messageprovider"
             android:exported="true" />
 
         <!-- 友盟相关 -->

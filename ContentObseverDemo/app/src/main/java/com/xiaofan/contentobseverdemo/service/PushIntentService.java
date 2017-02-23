@@ -1,8 +1,10 @@
 package com.xiaofan.contentobseverdemo.service;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 
 import com.umeng.message.UmengMessageService;
@@ -11,6 +13,7 @@ import com.xiaofan.contentobseverdemo.bean.MessageBody;
 import com.xiaofan.contentobseverdemo.bean.MessageExtra;
 import com.xiaofan.contentobseverdemo.bean.MessageExtraMapBean;
 import com.xiaofan.contentobseverdemo.bean.UmengMessageBean;
+import com.xiaofan.contentobseverdemo.constant.SqlConstant;
 import com.xiaofan.contentobseverdemo.util.GsonUtil;
 import com.xiaofan.contentobseverdemo.util.LogUtil;
 import com.xiaofan.contentobseverdemo.util.ManifestUtil;
@@ -46,6 +49,11 @@ public class PushIntentService extends UmengMessageService {
 //                MessageExtraMapBean mapBean = GsonUtil.json2Object(info.extra.map, MessageExtraMapBean.class);
 //                handlerPushMsg(context, info.body, info.extra, mapBean);
                 handlerPushMsg(context, info.body, info.extra, null);
+                // 保存数据到数据库中
+                ContentValues values = new ContentValues();
+                values.put("title",info.body.title + " : " + SystemClock.currentThreadTimeMillis());
+                values.put("content",info.body.text +" : " + SystemClock.currentThreadTimeMillis());
+                getContentResolver().insert(SqlConstant.PROVIDER_MSG_URI,values);
 
             }
         } catch (Exception e) {

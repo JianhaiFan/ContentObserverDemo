@@ -3,54 +3,46 @@ package com.xiaofan.contentobseverdemo.bean.table;
 import java.io.Serializable;
 
 /**
- * Created by fanjianhai on 2017/2/20.
+ * @author: 范建海
+ * @createTime: 2017/2/23 14:13
+ * @className:  Message
+ * @description: 消息实体Bean
+ * @changed by:
  */
-public class Message implements Serializable{
+public class Message implements Serializable {
 
-    private String msgId;
+    private String title;
 
-    private String msgContent;
-
-    private String msgType;
+    private String content;
 
     public Message() {}
 
-    public Message(String msgId, String msgContent, String msgType) {
-        this.msgId = msgId;
-        this.msgContent = msgContent;
-        this.msgType = msgType;
+    public Message(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
-    public String getMsgId() {
-        return msgId;
+    public String getTitle() {
+        return title;
     }
 
-    public void setMsgId(String msgId) {
-        this.msgId = msgId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getMsgContent() {
-        return msgContent;
+    public String getText() {
+        return content;
     }
 
-    public void setMsgContent(String msgContent) {
-        this.msgContent = msgContent;
-    }
-
-    public String getMsgType() {
-        return msgType;
-    }
-
-    public void setMsgType(String msgType) {
-        this.msgType = msgType;
+    public void setText(String text) {
+        this.content = text;
     }
 
     @Override
     public String toString() {
         return "Message{" +
-                "msgId='" + msgId + '\'' +
-                ", msgContent='" + msgContent + '\'' +
-                ", msgType='" + msgType + '\'' +
+                "title='" + title + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 }
